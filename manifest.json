@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Panopto URL Copier",
+  "description": "Copy Panopto URL of current playing time",
+  "version": "1.0",
+  "icons": {
+    "16": "",
+    "48": "",
+    "128": ""
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "",
+      "48": "",
+      "128": ""
+    }
+  },
+  "content_scripts": [{}]
+}
