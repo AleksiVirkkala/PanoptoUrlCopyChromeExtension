@@ -1,6 +1,6 @@
 {
   "name": "Panopto URL Copier",
-  "version": "1.0",
+  "version": "1.0.1",
   "manifest_version": 3,
   "description": "Copy Panopto URL of current playing time",
   "icons": {
@@ -14,7 +14,7 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://tuni.cloud.panopto.eu/*"],
+      "matches": ["https://*.panopto.eu/*", "https://*.panopto.com/*"],
       "js": ["index.js"]
     }
   ],
