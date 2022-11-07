@@ -39,12 +39,27 @@ function getSectionName() {
   return sectionElement.textContent;
 }
 
-function getLinkTitle() {
-  const tabTitle = document.title;
-  const videoSectionName = getSectionName();
-
-  if (!videoSectionName) {
-    return tabTitle;
+function getParentName() {
+  const parentNameElement = document.querySelector("#parentName");
+  if (!parentNameElement) {
+    return null;
   }
-  return `${tabTitle} > ${videoSectionName}`;
+  return parentNameElement.textContent;
+}
+
+function getLinkTitle() {
+  const LEVEL_CONNECTION_SYMBOL = "→";
+  let resultText = "";
+
+  const parentName = getParentName();
+  if (parentName) resultText += `${parentName} ${LEVEL_CONNECTION_SYMBOL} `;
+
+  const tabTitle = document.title;
+  resultText += tabTitle;
+
+  const videoSectionName = getSectionName();
+  if (videoSectionName)
+    resultText += ` ${LEVEL_CONNECTION_SYMBOL} ${videoSectionName}`;
+
+  return resultText;
 }
